@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 // Entrar com duas palavras, e verifique qual delas aparece antes no dicionário.
+// Esta errado, deve-se utilizar string para fazer
 
 int main()
 {
@@ -50,8 +51,4 @@ int main()
             break;
         }
     }
-    
-
-
-
 }
