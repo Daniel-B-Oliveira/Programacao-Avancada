@@ -43,4 +43,5 @@ int main()
         }
         y = 0;
     }while(ope != 'e');
+    return 0;
 }
