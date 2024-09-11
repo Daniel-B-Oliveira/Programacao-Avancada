@@ -1,54 +1,38 @@
 #include <stdio.h>
+#include <string.h>
 
 // Entrar com duas palavras, e verifique qual delas aparece antes no dicionário.
-// Esta errado, deve-se utilizar string para fazer
 
 int main()
 {
+    char en1[50], en2[50];
     char p1[50], p2[50];
     int i;
+    
+    scanf("%s", en1);
+    scanf("%s", en2);
+    
+    strcpy(p1, en1);
+    strcpy(p2, en2);
 
-    // printf("%c %c", 65, 65+32);
+    strlwr(p1);
+    strlwr(p2);
 
-    for(i=0; i<50; i++)
+    if(strcmp(p1,p2) == 0)
+        printf("Palavras igauis: '%s'", en1);
+    else
     {
-        scanf("%c", &p1[i]);
-        if(p1[i] == '\n') break;
-        if(p1[i] >= 'A' && p1[i] <= 'Z') p1[i] += (char) 32; //Transforma letras maiusculas em minusculas
-    }
-
-    fflush(stdin);
-
-    for(i=0; i<50; i++)
-    {
-        scanf("%c", &p2[i]);
-        if(p2[i] == '\n') break;
-        if(p2[i] >= 'A' && p2[i] <= 'Z') p2[i] += (char) 32;
-    }
-
-    for(i=0; i<50; i++)
-    {
-        if(p1[i] == '\n' || p2[i] == '\n')
-        {
-            if(p1[i] == p2[i])
-                printf("As palavras sao iguais");
-            else if(p1[i] == '\n')
-                printf("A palavra 1 vem antes");
-            else
-                printf("A palavra 2 vem antes");
-            break;
-        }
-
+        for(i=0; i<50; i++)
         if(p1[i] < p2[i])
         {
-            printf("A palavra 1 vem antes");
+            printf("'%s' vem primeiro", en1);
             break;
-        }
-
-        if(p1[i] > p2[i])
+        }else if(p1[i] > p2[i])
         {
-            printf("A palavras 2 vem antes");
+            printf("'%s' vem primeiro", en2);
             break;
         }
     }
+
+    return 0;
 }
