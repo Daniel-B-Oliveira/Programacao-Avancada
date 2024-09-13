@@ -36,9 +36,7 @@ int main()
     for(i=0; i<10; i++)
     {
         num = rand() % 11;
-        printf("%d ", num);
-        for(j=0; j<11; j++)
-            if(num == j) roleta[j]++;
+        roleta[num]++;
     }
 
     printf("\n");
