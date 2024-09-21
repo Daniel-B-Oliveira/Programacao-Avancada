@@ -11,7 +11,7 @@ int main()
     getchar();
     scanf("%[^\n]s", fra2);
 
-    if(strstr(fra1, fra2) != NULL || strstr(fra2, fra1) != NULL) printf("SIm");
+    if(strstr(fra1, fra2) != NULL || strstr(fra2, fra1) != NULL) printf("Sim");
     else printf("Nao");
 
     return 0;
