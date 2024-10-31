@@ -7,20 +7,32 @@
     existir uma função que calcula a potência.
 */
 
-float potencia(int a, int b){
-    if(b==0) return 1;
+// float potencia(int a, int b){
+//     if(b==0) return 1;
 
+//     if(b > 0)
+//         return a*potencia(a, b-1);
+
+//     return (1.0/a)*potencia(a, b+1);
+// }
+
+float potencia (int a, int b){
+    int i;
+    float x = 1;
+    
     if(b > 0)
-        return a*potencia(a, b-1);
+        for (i = 0; i < b; i++) x *= a;
+    else if(b < 0)
+        for  (i = b; i < 0; i++) x /= (float) a;
 
-    return (1.0/a)*potencia(a, b+1);
+    return x;
 }
 
 int main()
 {
     float n;
-    n = potencia(2,-1);
-    printf("%f", n);
+    n = potencia (2,-1);
+    printf ("%f\n", potencia (2, -2));
 
     return 0;
 }

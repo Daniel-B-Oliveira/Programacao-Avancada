@@ -6,10 +6,16 @@ calcular a soma de Gauss de N, calcular o número harmônico de N, calcular a po
 N^N. Faça uma função para cada opção.
 */
 
-int soma_gauss(int n)
-{
-    if(n==1) return 1;
-    return n + soma_gauss(n-1);
+// int soma_gauss(int n)
+// {
+//     if(n==1) return 1;
+//     return n + soma_gauss(n-1);
+// }
+
+int soma_gauss (int n) {
+    int i, S = 0;
+    for (i = 1; i <= n; i++) S += i; 
+    return S;
 }
 
 float harmonico(int n)
