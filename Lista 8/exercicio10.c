@@ -2,10 +2,9 @@
 
 void troca(char v[100]){
     int i;
-    for(i=0; i<100; i++)
+    for(i = 0; v[i] != '\0'; i++)
     {
         if(v[i] == 'a') v[i] = 'A';
-        else if(v[i] == '\0') i=100;
     }
 }
 

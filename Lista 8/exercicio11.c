@@ -1,52 +1,38 @@
 #include <stdio.h>
 
-void soma_vetor(float v[3], float n)
-{
-    int i;
-    for(i=0; i<3; i++) v[i]+=n;
-}
-
-void mult_vetor(float v[3], float n)
-{
-    int i;
-    for(i=0; i<3; i++) v[i]*=(float)n;
-}
-
-void alterar_vetor(float v[3], int op)
-{
-    int i = 0;
-    switch(op)
-    {
-        case 1: soma_vetor(v, 1); break;
-        case 2: soma_vetor(v, -1); break;
-        case 3: mult_vetor(v, 2); break;
-        case 4: mult_vetor(v, 0.5); break;
+void alteraCoord (float* x, float* y, float* z, int op) {
+    switch(op) {
+        case 1:
+            *x += 1; 
+            *y += 1; 
+            *z += 1;
+            break;
+        case 2:
+            *x -= 1; 
+            *y -= 1; 
+            *z -= 1; 
+            break;
+        case 3:
+            *x *= 2;
+            *y *= 2;
+            *z *= 2;
+            break;
+        case 4:
+            *x /= 2;
+            *y /= 2;
+            *z /= 2;
+            break;
+        default: printf("Opcao %d eh invalida.\n", op);
     }
+
 }
 
-void ler_vetor(float v[3])
-{
-    int i;
-    for(i=0; i<3; i++) scanf("%f", &v[i]);
-}
+int main() {
+    float x, y, z;
+    int opcao;
 
-void mostrar_vetor(float v[3])
-{
-    int i;
-    printf("( ");
-    for(i=0; i<3; i++)
-        if(i < 3-1) printf("%.2f, ", v[i]);
-        else printf("%.2f", v[i]);
-    printf(" )");
-}
-
-int main()
-{
-    float v[3];
-    int op;
-
-    ler_vetor(v);
-    mostrar_vetor(v);
+    printf("Digite as coordenadas iniciais do ponto (x, y, z): ");
+    scanf("%f %f %f", &x, &y, &z);
 
     printf("\nOpcoes:\n");
     printf("1) somar 1 em todas as coordenadas do ponto.\n");
@@ -54,11 +40,12 @@ int main()
     printf("3) duplicar todas as coordenadas do ponto.\n");
     printf("4) dividir pela metade todas as coordenadas do ponto.\n");
 
-    fflush(stdin);
-    scanf("%d", &op);
+    printf("Opcao: ");
+    scanf("%d", &opcao);
 
-    alterar_vetor(v, op);
-    mostrar_vetor(v);
+    alteraCoord(&x, &y, &z, opcao);
+
+    printf("Novo ponto: (%.2f, %.2f, %.2f)\n", x, y, z);
 
     return 0;
 

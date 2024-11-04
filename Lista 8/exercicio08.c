@@ -7,13 +7,13 @@
     elementos. Depois, com outro procedimento, escreva os elementos do vetor.
 */
 
-void entrada_elementos(int n, float v[n])
+void entrada_elementos(float v[], int n)
 {
     int i;
     for(i=0; i<n; i++) scanf("%f", &v[i]);
 }
 
-void mostrar_elementos(int n, float v[n])
+void mostrar_elementos(float v[], int n)
 {
     int i;
     printf("(");
@@ -28,9 +28,9 @@ int main()
 
     float vetor[n];
 
-    entrada_elementos(n, vetor);
+    entrada_elementos(vetor, n);
 
-    mostrar_elementos(n, vetor);
+    mostrar_elementos(vetor, n);
 
     return 0;
 }

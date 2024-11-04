@@ -1,5 +1,14 @@
 #include <stdio.h>
 
+/*
+    Faça um programa com as seguintes funções/procedimentos:
+        void entradaMatriz(int M[3][3]);
+        int verificaIdenticas(int A[3][3], int B[3][3]);
+    Onde o procedimento entradaMatriz é para o usuário entrar com os dados em uma
+    matriz e a função verificaIdenticas  é para analisar se duas matrizes são idênticas em
+    conteúdo (retorna 1, se sim, e 0 caso contrário).
+*/
+
 void entradaMatriz(int M[3][3])
 {
     int i, j;
